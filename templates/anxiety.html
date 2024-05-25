@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="static/css/diseases_style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Anxiety</title>
+    <style>
+   {% block css %}{% endblock css %}
+  </style>
+</head>
+<body>
+
+<!-- header section -->
+<header class="header">
+    <a href="#" class="logo"><i class="fas fa-heartbeat"></i>HealthXpert</a>
+    <nav class="navbar">
+        <a href="/home">Home</a>
+        <a href="/services">Services</a>
+        <a href="/diseases">Diseases</a>
+        <a href="/symptomchecker">Symptom Checker</a>
+        <a href="/diabetesPredict">Diabetes Predictor</a>
+    </nav>
+    <div id="menu-btn" class="fas fa-bars"></div>
+</header>
+
+ <!--Side nav bar-->
+ <nav class="navigation">
+    <ul>
+        <li class="list active" >
+            <a href="#description">
+                <span class="icon"><i class='bx bx-body icon'></i></span>
+                <span class="title">Description</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#symptoms">
+                <span class="icon"><i class='bx bx-plus-medical icon'></i></span>
+                <span class="title">Symptomps</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#causes">
+                <span class="icon"><i class='bx bx-detail icon'></i></span>
+                <span class="title">Causes</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#precautions">
+                <span class="icon"><i class='bx bx-shield-alt-2 icon'></i></span>
+                <span class="title">Precautions</span>
+            </a>
+        </li>
+ </nav>
+ 
+ <!-------------Home section----------->
+ <section class="home">
+    <div class="title">
+       ANXIETY
+    </div>
+
+    <div class="container" id="description">
+        <div class="row">
+            <div class="image">
+                <img src="/static/image/Anxiety.png" alt="">
+            </div>
+            <div class="content">
+                <h1 style="text-align: left;">Description : </h1>
+                <p>
+                    Anxiety is a feeling of nervousness, unease, or worry that typically occurs in the absence of an imminent threat. It differs from fear, which is the body’s natural response to immediate danger.Anxiety is part of the body’s natural reaction to stress, so it can be helpful at times, making you more alert and ready for action.Anxiety disorders and normal feelings of anxiousness are two different things. Many of us get anxious when faced with particular situations we find stressful, but if those feelings don’t subside, the anxiety could be more chronic. When feelings of fear or nervousness become excessive or difficult to control, or interfere with daily life, an anxiety disorder may be present. Anxiety disorders are among the most common psychiatric conditions in the United States.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container"  id="symptoms">
+        <h1>Symptoms : </h1>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li> Feeling nervous, restless or tense</li>
+                <li> Having a sense of impending danger, panic or doom</li>
+                <li> Having an increased heart rate</li>
+                <li> Breathing rapidly (hyperventilation)</li>
+                <li> Sweating</li>
+                <li> Trembling</li>
+                <li> Feeling weak or tired</li>
+                <li> Trouble concentrating or thinking about anything other than the present worry</li>
+                <li> Having trouble sleeping</li>
+                <li> Experiencing gastrointestinal (GI) problems</li>
+                <li> Having the urge to avoid things that trigger anxiety</li>
+            </ul> 
+    </div>
+    <div class="container"  id="causes">
+        <h1>Causes : </h1>
+        <ul style="margin: 9px 0px 30px 30px;">
+            <li>Stress</li>
+            <li>Other medical issues such as depression or diabetes</li>
+            <li>First degree relatives with generalized anxiety disorder</li>
+            <li>Environmental concerns, such as child abuse</li>
+            <li>Substance use</li>
+            <li>Situations such as surgery or occupational hazard</li>
+        </ul> 
+    </div>
+
+    <div class="container" id="precautions">
+        <h1>Precautions : </h1>
+        <b>Here are some precautions to take in viral fever:</b><br><br>
+        <ul style="margin: 9px 0px 30px 30px;">
+            <li>Take care of your body by eating a well-balanced diet. Include a multivitamin when you can't always eat right.</li>
+            <li>Limit alcohol, caffeine, and sugar consumption.</li>
+            <li>Take time out for yourself every day. Even 20 minutes of relaxation or doing something pleasurable for yourself can be restorative and decrease your overall anxiety level.</li>
+            <li>Trim a hectic schedule to its most essential items, and do your best to avoid activities you don't find relaxing.</li>
+            <li>Keep an anxiety journal. Rank your anxiety on a 1-to-10 scale. Note the events during which you felt anxious and the thoughts going through your mind before and during the anxiety. Keep track of things that make you more anxious or less anxious.</li>
+        </ul>
+        <p style="margin: 0 0 2.5rem 6rem; ">By taking these precautions, you can help prevent anxiety and overcome your fear anxiousness.</p>
+    </div>
+ </section>
+{% block body %} {% endblock %}
+ <script>
+    // for side nav bar menu
+    const list = document.querySelectorAll('.list');
+    function activeLink(){
+        list.forEach((item) => item.classList.remove('active'));
+        this.classList.add('active');
+    }
+    list.forEach((item) => item.addEventListener('click',activeLink));
+ </script>
+</body>
+</html>

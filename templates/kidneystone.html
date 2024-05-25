@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="static/css/diseases_style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Kidney stone</title>
+
+</head>
+
+<body>
+
+    <!-- header section -->
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-heartbeat"></i>HealthXpert</a>
+        <nav class="navbar">
+            <a href="/home">Home</a>
+            <a href="/services">Services</a>
+            <a href="/diseases">Diseases</a>
+            <a href="/symptomchecker">Symptom Checker</a>
+            <a href="/diabetesPredict">Diabetes Predictor</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+
+    <!--Side nav bar-->
+    <nav class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="#description">
+                    <span class="icon"><i class='bx bx-body icon'></i></span>
+                    <span class="title">Description</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#symptoms">
+                    <span class="icon"><i class='bx bx-plus-medical icon'></i></span>
+                    <span class="title">Symptomps</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#causes">
+                    <span class="icon"><i class='bx bx-detail icon'></i></span>
+                    <span class="title">Causes</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#precautions">
+                    <span class="icon"><i class='bx bx-shield-alt-2 icon'></i></span>
+                    <span class="title">Precautions</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-------------Home section----------->
+    <section class="home">
+        <div class="title">
+            KIDNEY<span>STONE</span>
+        </div>
+
+        <div class="container" id="description">
+            <div class="row">
+                <div class="image">
+                    <img src="/static/image/kidneystone.jpg" alt="" style="border-radius: 5rem;">
+                </div>
+                <div class="content">
+                    <h1 style="text-align: left;">Description : </h1>
+                    <p>
+                        Kidney stones (also called renal calculi, nephrolithiasis or urolithiasis) are hard deposits
+                        made of minerals and salts that form inside your kidneys.Diet, excess body weight, some medical
+                        conditions, and certain supplements and medications are among the many causes of kidney stones.
+                        Kidney stones can affect any part of your urinary tract — from your kidneys to your bladder.
+                        Often, stones form when the urine becomes concentrated, allowing minerals to crystallize and
+                        stick together.
+                        Passing kidney stones can be quite painful, but the stones usually cause no permanent damage if
+                        they're recognized in a timely fashion. Depending on your situation, you may need nothing more
+                        than to take pain medication and drink lots of water to pass a kidney stone. In other instances
+                        — for example, if stones become lodged in the urinary tract, are associated with a urinary
+                        infection or cause complications — surgery may be needed.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="symptoms">
+            <h1>Symptoms : </h1>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li> Severe, sharp pain in the side and back, below the ribs</li>
+                <li> Pain that radiates to the lower abdomen and groin</li>
+                <li> Pain that comes in waves and fluctuates in intensity</li>
+                <li> Pain or burning sensation while urinating</li>
+                <li> Pink, red or brown urine</li>
+                <li> A persistent need to urinate, urinating more often than usual or urinating in small amounts</li>
+                <li> Nausea and vomiting</li>
+            </ul>
+        </div>
+        <div class="container" id="causes">
+            <h1>Causes : </h1>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li>drinking too little water</li>
+                <li>exercise (too much or too little)</li>
+                <li>obesity</li>
+                <li>weight loss surgery</li>
+                <li>eating food with too much salt or sugar</li>
+                <li>Eating too much fructose correlates with increasing risk of developing a kidney stone</li>
+            </ul>
+        </div>
+
+        <div class="container" id="precautions">
+            <h1>Precautions : </h1>
+            <b>Here are some precautions to take if you facing problem with kidney stone:</b><br><br>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li>drink water, but drinks like tea and coffee also count.</li>
+                <li>add fresh lemon juice to your water. </li>
+                <li>avoid fizzy drinks.</li>
+                <li>do not eat too much salt.</li>
+                <li>Limit foods with high oxalate content like Spinach, many berries, chocolate, wheat bran, nuts,
+                    beets, tea and rhubarb should be eliminated from your diet intake</li>
+                <li>Eat enough dietary calcium: Three servings of dairy per day will help lower the risk of calcium
+                    stone formation. Eat with meals.</li>
+                <li>Eat a moderate amount of protein : High protein intakes will cause the kidneys to excrete more
+                    calcium therefore this may cause more stones to form in the kidney</li>
+            </ul>
+            <p style="margin: 0 0 2.5rem 6rem; ">By taking these precautions, you can help prevent the kidney stone.</p>
+        </div>
+    </section>
+    {% block body %} {% endblock %}
+    <script>
+        // for side nav bar menu
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', activeLink));
+    </script>
+</body>
+
+</html>

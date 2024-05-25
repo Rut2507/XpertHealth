@@ -1,0 +1,30 @@
+{% include 'includes/sympCheck.html' %}
+
+<body>
+    <script>
+        window.onload = function () {
+            var value = localStorage.getItem('myValue');
+            var output = document.getElementById('value-output');
+            output.innerText = value;
+        };
+    </script>
+    <div id="prediction" style="position: absolute; top:850px;height:400px;">
+        <form>
+            <span style="font-family:Georgia, 'Times New Roman', Times, serif, sans-serif;font-size: 25px; color:black;
+        position: relative;left:500px; top:0px">
+                <br><b>------------------------ RESULT ----------------------</b><br>
+                <font size="5" color="green">
+                    Symptom chosen:
+                </font>
+                <p style="font-size: 20px; color:grey;" id="value-output"></p>
+                <font size="5" color="green">
+                    Conclusion:
+                </font>
+                <p style="font-size: 20px; color:grey;">There are chances you may have <span
+                        style="font-weight:bold;font-size: 20px; color:black;">{{disease[0]}}</span></p>
+                <b>------------------------------------------------------</b>
+            </span>
+            <br>
+        </form>
+    </div>
+</body>

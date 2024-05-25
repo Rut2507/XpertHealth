@@ -1,0 +1,29 @@
+{% include 'includes/Diabetes_predict.html' %}
+
+<body>
+  <script>
+    window.onload = function () {
+      var value = localStorage.getItem('myValue');
+      var output = document.getElementById('value-output');
+      output.innerText = value;
+    };
+  </script>
+
+  {% if result %}
+  <span style="font-family:Georgia, 'Times New Roman', Times, serif, sans-serif;font-size: 25px; color:black;
+        position: relative;left:500px; top:20px">
+    <br><b>------------------------ RESULT ----------------------</b><br>
+    <font size="5" color="green">
+      Parameter:
+    </font>
+    <p style="font-size: 20px; color:grey;" id="value-output"></p>
+    <br>
+    <font size="5" color="green">
+      Result:
+    </font>
+    <p style="font-size: 20px; color:Black;">{{ result }}</p>
+    <b>------------------------------------------------------</b>
+  </span>
+  <br>
+  {% endif %}
+</body>

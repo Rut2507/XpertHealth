@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="static/css/diseases_style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Food Posioning</title>
+
+</head>
+
+<body>
+
+    <!-- header section -->
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-heartbeat"></i>HealthXpert</a>
+        <nav class="navbar">
+            <a href="/home">Home</a>
+            <a href="/services">Services</a>
+            <a href="/diseases">Diseases</a>
+            <a href="/symptomchecker">Symptom Checker</a>
+            <a href="/diabetesPredict">Diabetes Predictor</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+
+    <!--Side nav bar-->
+    <nav class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="#description">
+                    <span class="icon"><i class='bx bx-body icon'></i></span>
+                    <span class="title">Description</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#symptoms">
+                    <span class="icon"><i class='bx bx-plus-medical icon'></i></span>
+                    <span class="title">Symptomps</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#causes">
+                    <span class="icon"><i class='bx bx-detail icon'></i></span>
+                    <span class="title">Causes</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#precautions">
+                    <span class="icon"><i class='bx bx-shield-alt-2 icon'></i></span>
+                    <span class="title">Precautions</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-------------Home section----------->
+    <section class="home">
+        <div class="title">
+            FOOD <span>POISIONING</span>
+        </div>
+
+        <div class="container" id="description">
+            <div class="row">
+                <div class="image">
+                    <img src="/static/image/Person with a cold-amico.png" alt="">
+                </div>
+                <div class="content">
+                    <h1 style="text-align: left;">Description : </h1>
+                    <p>
+                        Food poisoning, a type of foodborne illness, is a sickness people get from something they ate or
+                        drank. The causes are germs or other harmful things in the food or beverage.Symptoms of food
+                        poisoning often include upset stomach, diarrhea and vomiting. Symptoms usually start within
+                        hours or several days of eating the food. Most people have mild illness and get better without
+                        treatment.
+                        Sometimes food poisoning causes severe illness or complications.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="symptoms">
+            <h1>Symptoms : </h1>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li> Upset stomach</li>
+                <li> Vomiting</li>
+                <li> Diarrhea</li>
+                <li> Diarrhea with bloody stools.</li>
+                <li> Stomach pain and cramps</li>
+                <li>Fever</li>
+                <li> Headache</li>
+
+            </ul>
+        </div>
+        <div class="container" id="causes">
+            <h1>Causes : </h1>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li>Tree and grass pollen (hay fever)</li>
+                <li>House dust mites</li>
+                <li>Foods, such as peanuts, milk and eggs (food allergy)</li>
+                <li>Animal fur, particularly from pets like cats and dogs</li>
+                <li>Insect stings, such as bee and wasp stings</li>
+                <li>Certain medicines</li>
+            </ul>
+        </div>
+
+        <div class="container" id="precautions">
+            <h1>Precautions : </h1>
+            <b>Here are some precautions to take in viral fever:</b><br><br>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li>Avoid your allergens - This is very important but not always easy. Some allergens are easier to
+                    avoid than others. </li>
+                <li>Take your medicines as prescribed - They can be helpful for managing your symptoms.</li>
+                <li>If you are at risk for anaphylaxis, keep your epinephrine auto-injectors with you at all times.</li>
+                <li>Keep a diary - Track what you do, what you eat, when symptoms occur and what seems to help. This may
+                    help you and your doctor find what causes or worsens your symptoms.</li>
+                <li>Wear a medical alert bracelet (or necklace) - If you have ever had a severe allergic reaction,
+                    please wear a medical alert bracelet.</li>
+                <li>Quitting smoking</li>
+                <li>Avoiding the use of carpets and using wood or hard vinyl floorings.</li>
+                <li>Regularly washing and vacuuming cushions, soft toys, curtains and sofas.</li>
+            </ul>
+            <p style="margin: 0 0 2.5rem 6rem; ">By taking these precautions, you can help prevent the allergic
+                reactions or stop them from increasing.</p>
+        </div>
+    </section>
+    {% block body %} {% endblock %}
+    <script>
+        // for side nav bar menu
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', activeLink));
+    </script>
+</body>
+
+</html>

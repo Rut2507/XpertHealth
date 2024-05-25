@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="static/css/diseases_style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>lung cancer</title>
+
+</head>
+
+<body>
+
+    <!-- header section -->
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-heartbeat"></i>HealthXpert</a>
+        <nav class="navbar">
+            <a href="/home">Home</a>
+            <a href="/services">Services</a>
+            <a href="/diseases">Diseases</a>
+            <a href="/symptomchecker">Symptom Checker</a>
+            <a href="/diabetesPredict">Diabetes Predictor</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+
+    <!--Side nav bar-->
+    <nav class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="#description">
+                    <span class="icon"><i class='bx bx-body icon'></i></span>
+                    <span class="title">Description</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#symptoms">
+                    <span class="icon"><i class='bx bx-plus-medical icon'></i></span>
+                    <span class="title">Symptomps</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#causes">
+                    <span class="icon"><i class='bx bx-detail icon'></i></span>
+                    <span class="title">Causes</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#precautions">
+                    <span class="icon"><i class='bx bx-shield-alt-2 icon'></i></span>
+                    <span class="title">Precautions</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-------------Home section----------->
+    <section class="home">
+        <div class="title">
+            LUNG <span>CANCER</span>
+        </div>
+
+        <div class="container" id="description">
+            <div class="row">
+                <div class="image">
+                    <img src="/static/image/lungcancer.jpg" alt=""
+                        style="border-radius: 5rem; height: 20rem; padding-bottom: 2rem; width: 60%;">
+                </div>
+                <div class="content">
+                    <h1 style="text-align: left;">Description : </h1>
+                    <p>
+                        Lung cancer is a type of cancer that begins in the lungs. Your lungs are two spongy organs in
+                        your chest that take in oxygen when you inhale and release carbon dioxide when you exhale. Lung
+                        cancer is the leading cause of cancer deaths worldwide. People who smoke have the greatest risk
+                        of lung cancer, though lung cancer can also occur in people who have never smoked. The risk of
+                        lung cancer increases with the length of time and number of cigarettes you've smoked. If you
+                        quit smoking, even after smoking for many years, you can significantly reduce your chances of
+                        developing lung cancer.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="symptoms">
+            <h1>Symptoms : </h1>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li> A new cough that doesn't go away</li>
+                <li> Coughing up blood, even a small amount</li>
+                <li> Shortness of breath</li>
+                <li> Chest pain</li>
+                <li> Hoarseness</li>
+                <li> Losing weight without trying</li>
+                <li> Bone pain</li>
+                <li> Headache</li>
+            </ul>
+        </div>
+        <div class="container" id="causes">
+            <h1>Causes : </h1>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li>Cigarette smoking is the leading risk factor for lung cancer</li>
+                <li>Radon gas: Radon is a naturally occurring radioactive gas that can seep into buildings through
+                    cracks in the foundation.</li>
+                <li>Cigarette smoking</li>
+                <li>Asbestos: Exposure to asbestos, often found in certain workplaces or older buildings, is a known
+                    risk factor for lung cancer.</li>
+                <li>Air pollution: Long-term exposure to air pollution, such as particulate matter, can contribute to an
+                    increased risk of lung cancer.</li>
+                <li>Genetic factors: Certain genetic mutations or inherited conditions may predispose individuals to
+                    lung cancer.</li>
+
+            </ul>
+        </div>
+
+        <div class="container" id="precautions">
+            <h1>Precautions : </h1>
+            <b>Here are some precautions to take if you suffering with lung cancer:</b><br><br>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li>Don't smoke: If you've never smoked, don't start.</li>
+                <li>Stop smoking: Stop smoking now. Quitting reduces your risk of lung cancer, even if you've smoked for
+                    years.</li>
+                <li>Avoid secondhand smoke: If you live or work with a smoker, urge him or her to quit.</li>
+                <li>Test your home for radon: Have the radon levels in your home checked, especially if you live in an
+                    area where radon is known to be a problem. </li>
+                <li>Avoid carcinogens at work: Take precautions to protect yourself from exposure to toxic chemicals at
+                    work.</li>
+                <li>Eat a diet full of fruits and vegetables: Choose a healthy diet with a variety of fruits and
+                    vegetables. Food sources of vitamins and nutrients are best.</li>
+                <li>Exercise most days of the week: If you don't exercise regularly, start out slowly. Try to exercise
+                    most days of the week.</li>
+            </ul>
+            <p style="margin: 0 0 2.5rem 6rem; ">By taking these precautions, you can help prevent the lung cancer.</p>
+        </div>
+    </section>
+    {% block body %} {% endblock %}
+    <script>
+        // for side nav bar menu
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', activeLink));
+    </script>
+</body>
+
+</html>

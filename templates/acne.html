@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="static/css/diseases_style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>acne</title>
+</head>
+
+<body>
+
+    <!-- header section -->
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-heartbeat"></i>HealthXpert</a>
+        <nav class="navbar">
+            <a href="/home">Home</a>
+            <a href="/services">Services</a>
+            <a href="/diseases">Diseases</a>
+            <a href="/symptomchecker">Symptom Checker</a>
+            <a href="/diabetesPredict">Diabetes Predictor</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+
+    <!--Side nav bar-->
+    <nav class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="#description">
+                    <span class="icon"><i class='bx bx-body icon'></i></span>
+                    <span class="title">Description</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#symptoms">
+                    <span class="icon"><i class='bx bx-plus-medical icon'></i></span>
+                    <span class="title">Symptomps</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#causes">
+                    <span class="icon"><i class='bx bx-detail icon'></i></span>
+                    <span class="title">Causes</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#precautions">
+                    <span class="icon"><i class='bx bx-shield-alt-2 icon'></i></span>
+                    <span class="title">Precautions</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-------------Home section----------->
+    <section class="home">
+        <div class="title">
+            ACNE
+        </div>
+
+        <div class="container" id="description">
+            <div class="row">
+                <div class="image">
+                    <img src="/static/image/Acne treatment-cuate.png" alt="">
+                </div>
+                <div class="content">
+                    <h1 style="text-align: left;">Description : </h1>
+                    <p>
+                        Acne is a skin condition that occurs when your hair follicles become plugged with oil and dead
+                        skin cells. It causes whiteheads, blackheads or pimples. Acne is most common among teenagers,
+                        though it affects people of all ages.Effective acne treatments are available, but acne can be
+                        persistent. The pimples and bumps heal slowly, and when one begins to go away, others seem to
+                        crop up.Depending on its severity, acne can cause emotional distress and scar the skin. The
+                        earlier you start treatment, the lower your risk of such problems.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="symptoms">
+            <h1>Symptoms : </h1>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li> Whiteheads (closed plugged pores)</li>
+                <li> Blackheads (open plugged pores)</li>
+                <li> Small red, tender bumps (papules)</li>
+                <li> Pimples (pustules), which are papules with pus at their tips</li>
+                <li> Large, solid, painful lumps under the skin (nodules)</li>
+                <li> Painful, pus-filled lumps under the skin (cystic lesions)</li>
+            </ul>
+        </div>
+        <div class="container" id="causes">
+            <h1>Causes : </h1>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li>Hormonal changes due to pregnancy or puberty</li>
+                <li>polycystic ovarian syndrome (PCOS) and other endocrine conditions</li>
+                <li>Cigarette smoking</li>
+                <li>Poor sleep</li>
+                <li>Stress doesn't cause acne, but if you have acne already, stress may make it worse.</li>
+                <li>Cleansers, creams, moisturizers, and other beauty products with high oil content</li>
+                <li>Certain medications, including lithium, some types of hormonal birth control, anticonvulsants, and
+                    steroids</li>
+                <li>Hair follicles clogged by oil and dead skin cells</li>
+            </ul>
+        </div>
+
+        <div class="container" id="precautions">
+            <h1>Precautions : </h1>
+            <b>Here are some precautions to take if you facing problem with acne:</b><br><br>
+            <ul style="margin: 9px 0px 30px 30px;">
+                <li>Keep your skin clean.</li>
+                <li>Choose the right skin care. </li>
+                <li>Stay out of the sun and tanning beds.</li>
+                <li>Try an over-the-counter acne product</li>
+                <li>Avoid using fragrances, oils, pomades, or gels on your hair. If they get on your face, they can
+                    block your skin's pores and irritate your skin.</li>
+                <li>Avoid touching your face or propping your cheek or chin on your hands.</li>
+                <li>Avoid wearing clothing or using exercise equipment that rubs your skin and may cause irritation.
+                </li>
+            </ul>
+            <p style="margin: 0 0 2.5rem 6rem; ">By taking these precautions, you can help prevent the spread of acne.
+            </p>
+        </div>
+    </section>
+    {% block body %} {% endblock %}
+    <script>
+        // for side nav bar menu
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', activeLink));
+    </script>
+</body>
+
+</html>

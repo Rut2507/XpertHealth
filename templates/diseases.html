@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Diseases</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .search-box {
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      background: #fff;
+      margin: 40px auto 10px;
+      border-radius: 8px;
+      border-color: #2f2d2d;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    input {
+      flex: 1;
+      height: 50px;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-weight: 400;
+      font-size: 18px;
+      padding: 0 155px 0 65px;
+      color: rgb(71, 71, 71);
+    }
+
+    .search i {
+      left: 20px;
+      font-size: 30px;
+      color: #aba7a7;
+    }
+
+    button {
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      background-color: #1b107e;
+      cursor: pointer;
+    }
+
+    .search .button:active {
+      transform: translateY(-8%) scale(0.98);
+    }
+  </style>
+</head>
+
+<body>
+  {% block body %}
+  <!-- header section -->
+  <header class="header">
+    <a href="#" class="logo"><i class="fas fa-heartbeat"></i>HealthXpert</a>
+    <nav class="navbar">
+      <a href="/home">Home</a>
+      <a href="/services">Services</a>
+      <a href="/diseases">Diseases</a>
+      <a href="/symptomchecker">Symptom Checker</a>
+      <a href="/diabetesPredict">Diabetes Predictor</a>
+    </nav>
+    <div id="menu-btn" class="fas fa-bars"></div>
+  </header>
+
+  <!-- disease section -->
+  <section class="diseases">
+    <h1>All <span>Diseases</span></h1>
+    <div class="search-box">
+      <div class="search">
+        <i class="uil uil-search"></i>
+        <input type="text" onfocus="this.value=''" placeholder="Search here..." list="disease" id="input-box"
+          onchange="openPage()" autocomplete="off">
+        <button class="button" id="input-box" onchange="openPage()">Search</button>
+      </div>
+
+      <datalist id="disease">
+        <option value="Acidity">Acidity</option>
+        <option value="Acne">Acne</option>
+        <option value="Allergic Conditions">Allergic Conditions</option>
+        <option value="Anxiety">Anxiety</option>
+        <option value="Body Ache">Body Ache</option>
+        <option value="Cataract">Cataract</option>
+        <option value="Conjuctivitis">Conjuctivitis</option>
+        <option value="Depression">Depression</option>
+        <option value="Food Posioning">Food Posioning</option>
+        <option value="Kidney Stone">Kidney Stone</option>
+        <option value="Lung Cancer">Lung Cancer</option>
+        <option value="Nausea">Nausea</option>
+        <option value="Viral Fever">Viral Fever</option>
+      </datalist>
+    </div>
+
+    <p class="text1">We provide symptoms, treatments, and precautions that can be taken to avoid getting ill.
+      <span>Precaution is better than cure</span></p>
+
+    <div class="row">
+
+      <div class="course-col">
+        <h3>Acidity</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore pariatur iure sapiente et quae
+          doloribus assumenda, quasi commodi enim ipsa, ipsum aspernatur tempora inventore quam vitae quis sunt maxime.
+        </p>
+        <a href="/acidity" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+      <div class="course-col">
+        <h3>Acne</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore pariatur iure sapiente et quae
+          doloribus assumenda, quasi commodi enim ipsa, ipsum aspernatur tempora inventore quam vitae quis sunt maxime.
+        </p>
+        <a href="/acne" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+      <div class="course-col">
+        <h3>Allergic Conditions</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore pariatur iure sapiente et quae
+          doloribus assumenda, quasi commodi enim ipsa, ipsum aspernatur tempora inventore quam vitae quis sunt maxime.
+        </p>
+        <a href="/allergy" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+      <div class="course-col">
+        <h3>Anxiety</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore pariatur iure sapiente et quae
+          doloribus assumenda, quasi commodi enim ipsa, ipsum aspernatur tempora inventore quam vitae quis sunt maxime.
+        </p>
+        <a href="/anxiety" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+      <div class="course-col">
+        <h3>Body Ache</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore pariatur iure sapiente et quae
+          doloribus assumenda, quasi commodi enim ipsa, ipsum aspernatur tempora inventore quam vitae quis sunt maxime.
+        </p>
+        <a href="/bodyache" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+      <div class="course-col">
+        <h3>Cataract</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore pariatur iure sapiente et quae
+          doloribus assumenda, quasi commodi enim ipsa, ipsum aspernatur tempora inventore quam vitae quis sunt maxime.
+        </p>
+        <a href="/catract" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+      <div class="course-col">
+        <h3>Conjuctivitis</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore pariatur iure sapiente et quae
+          doloribus assumenda, quasi commodi enim ipsa, ipsum aspernatur tempora inventore quam vitae quis sunt maxime.
+        </p>
+        <a href="/conjuctivitis" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+      <div class="course-col">
+        <h3>Depression</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore pariatur iure sapiente et quae
+          doloribus assumenda, quasi commodi enim ipsa, ipsum aspernatur tempora inventore quam vitae quis sunt maxime.
+        </p>
+        <a href="/depresion" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+      <div class="course-col">
+        <h3>Food Posioning</h3>
+        <p>Food poisoning, a type of foodborne illness, is a sickness people get from something they ate or drank. The
+          causes are germs or other harmful things in the food or beverage.Symptoms of food poisoning often include
+          upset stomach, diarrhea and vomiting.</p>
+        <a href="/foodpoision" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+      <div class="course-col">
+        <h3>Kidney Stone</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore pariatur iure sapiente et quae
+          doloribus assumenda, quasi commodi enim ipsa, ipsum aspernatur tempora inventore quam vitae quis sunt maxime.
+        </p>
+        <a href="/kidneystone" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+      <div class="course-col">
+        <h3>Lung Cancer</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore pariatur iure sapiente et quae
+          doloribus assumenda, quasi commodi enim ipsa, ipsum aspernatur tempora inventore quam vitae quis sunt maxime.
+        </p>
+        <a href="lungcancer" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+      <div class="course-col">
+        <h3>Nausea</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore pariatur iure sapiente et quae
+          doloribus assumenda, quasi commodi enim ipsa, ipsum aspernatur tempora inventore quam vitae quis sunt maxime.
+        </p>
+        <a href="/nausea" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+      <div class="course-col">
+        <h3>Viral Fever</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore pariatur iure sapiente et quae
+          doloribus assumenda, quasi commodi enim ipsa, ipsum aspernatur tempora inventore quam vitae quis sunt maxime.
+        </p>
+        <a href="/fever" class="btn">learn more <span class="fas fa-chevron-right"></span></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- footer section -->
+
+  <section class="footer">
+
+    <div class="box-container">
+
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="#"><i class="fas fa-chevron-right"></i>home</a>
+        <a href="#"><i class="fas fa-chevron-right"></i>services</a>
+        <a href="#"><i class="fas fa-chevron-right"></i>about</a>
+        <a href="#"><i class="fas fa-chevron-right"></i>book</a>
+        <a href="#"><i class="fas fa-chevron-right"></i>review</a>
+      </div>
+
+      <div class="box">
+        <h3>our services</h3>
+        <a href="#"><i class="fas fa-chevron-right"></i>Prediction</a>
+        <a href="#"><i class="fas fa-chevron-right"></i>Appointment Booking</a>
+        <a href="#"><i class="fas fa-chevron-right"></i>diagnosis</a>
+        <a href="#"><i class="fas fa-chevron-right"></i>ambulance service</a>
+      </div>
+
+      <div class="box">
+        <h3>contact info</h3>
+        <a href="#"><i class="fas fa-phone"></i>+91 9876543126</a>
+        <a href="#"><i class="fas fa-phone"></i>+91 9687536424</a>
+        <a href="#"><i class="fas fa-envelope"></i>shubham@gmail.com</a>
+        <a href="#"><i class="fas fa-envelope"></i>rut@gmail.com</a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i>chandigarh, India , 140413</a>
+      </div>
+
+      <div class="box">
+        <h3>follow us</h3>
+        <a href="#"><i class="fab fa-facebook"></i>facebook</a>
+        <a href="#"><i class="fab fa-instagram"></i>instagram</a>
+        <a href="#"><i class="fab fa-twitter"></i>twitter</a>
+        <a href="#"><i class="fab fa-linkedin"></i>linkedin</a>
+
+      </div>
+    </div>
+    <div class="credit">created by <span> Shubham Maurya, Rut Amrit | all rights reserved</span></div>
+
+  </section>
+  <script>
+    function openPage() {
+      var x = document.getElementById("input-box").value;
+      if (x == 'Acidity' || x == 'acidity') {
+        window.open("/acidity");
+      }
+      if (x == 'Acne' || x == 'acne') {
+        window.open("/acne");
+      }
+      if (x == 'Allergic Conditions' || x == 'allergic conditions' || x == 'allergy' || x == 'Allergy' || x == 'Allergic' || x == 'allergic') {
+        window.open("/allergy");
+      }
+      if (x == 'Anxiety' || x == 'anxiety') {
+        window.open("/anxiety");
+      }
+      if (x == 'Acidity' || x == 'acidity') {
+        window.open("/acidity");
+      }
+      if (x == 'Body Ache' || x == 'body ache' || x == 'BodyAche' || x == 'bodyache' || x == 'ache' || x == 'Ache') {
+        window.open("/bodyache");
+      }
+      if (x == 'Cataract' || x == 'cataract') {
+        window.open("/cataract");
+      }
+      if (x == 'Conjuctivitis' || x == 'conjuctivitis') {
+        window.open("/conjuctivitis");
+      }
+      if (x == 'Depression' || x == 'depression') {
+        window.open("/depresion");
+      }
+      if (x == 'Food Posioning' || x == 'food posioning' || x == 'foodpoision' || x == 'food' || x == 'Food') {
+        window.open("/foodpoision");
+      }
+      if (x == 'Kidney Stone' || x == 'kidney stone' || x == 'Kidney' || x == 'kidney' || x == 'Stone' || x == 'stone' || x == 'Kidneystone' || x == 'kidneystone') {
+        window.open("/kidneystone");
+      }
+      if (x == 'Lung Cancer' || x == 'lung cancer' || x == 'lungcancer' || x == 'lung' || x == 'Lung' || x == 'cancer' || x == 'Cancer') {
+        window.open("/lungcancer");
+      }
+      if (x == 'Nausea' || x == 'nausea') {
+        window.open("/nausea");
+      }
+      if (x == 'Viral Fever' || x == 'viral fever' || x == 'fever' || x == 'Fever' || x == 'Viralfever' || x == 'viralfever') {
+        window.open("/fever");
+      }
+    }
+  </script>
+  {% endblock %}
+</body>
+
+</html>

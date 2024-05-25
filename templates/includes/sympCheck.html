@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Symptom checker</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&family=Poppins:wght@300;400&family=Roboto+Slab:wght@300&display=swap');
+
+        :root {
+            --green: #106c10;
+            --blue: #1b107e;
+            --black: #444;
+            --light-color: #777;
+            --box-shadow: .5rem .5rem 0 rgba(22, 160 133, .2);
+            --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+            --border: .2rem solid var(--green);
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            transition: all .2s ease-out;
+            text-decoration: none;
+
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 7rem;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 9px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(transparent, #1b107e);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(transparent, #106c10);
+        }
+
+        .header {
+            padding: 2rem 9%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            height: 8%;
+        }
+
+        .header .logo {
+            font-size: 2.5rem;
+            /* color: var(--black); */
+        }
+
+        .header .logo i {
+            color: var(--blue);
+        }
+
+        .header .navbar a {
+            font-size: 1.8rem;
+            padding: 1rem 1rem 1rem 1rem;
+            color: var(--light-color);
+            margin-left: 2rem;
+        }
+
+        .header .navbar a:hover {
+            color: var(--blue);
+            font-size: 2rem;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+            /* cursor:; */
+        }
+
+        #menu-btn {
+            font-size: 2.5rem;
+            border-radius: .5rem;
+            background: #eee;
+            color: var(--blue);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+
+        .SympCheck .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            width: 750px;
+            margin-left: 500px;
+        }
+
+        .SympCheck .row form {
+            flex: 1 1 45rem;
+            background: #fff;
+            border: var(--border);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            padding: 2rem;
+            border-radius: .5rem;
+        }
+
+        .SympCheck .row form .form-control {
+            width: 100%;
+            border-radius: .5rem;
+            border: var(--border);
+            font-size: 1.6rem;
+            color: var(--black);
+            text-transform: none;
+            padding: 2rem;
+        }
+
+        .SympCheck .row form h2 {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .heading {
+            text-align: center;
+            padding-bottom: 2rem;
+            text-shadow: var(--text-shadow);
+            text-transform: uppercase;
+            color: var(--black);
+            font-size: 5rem;
+            letter-spacing: .4rem;
+            margin-top: 90px;
+        }
+
+        .heading span {
+            text-transform: uppercase;
+            color: var(--green);
+        }
+    </style>
+</head>
+
+<body>
+    {% block body%}
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-heartbeat"></i>HealthXpert</a>
+        <nav class="navbar">
+            <a href="/home">Home</a>
+            <a href="/services">Services</a>
+            <a href="/diseases">Diseases</a>
+            <a href="/symptomchecker">Symptom Checker</a>
+            <a href="/diabetesPredict">Diabetes Predictor</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <br>
+    <section class="SympCheck">
+        <h1 class="heading"><span>SYMPTOMS</span> CHECKER</h1>
+        <div class="row">
+            <form name="SymptomForm" id="SymForm" method="POST" action=/disease_predict>
+
+                <label for="Symptom1" align="left">
+                    <h2>Symptom1</h2>
+                </label>
+                <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom" required>
+                <datalist id="symp">
+                    {% for symp in symptoms %}
+                    <option value="{{symp}}">{{symp}}</option>
+                    {% endfor %}
+                </datalist>
+
+                <label for="Symptom2" align="left">
+                    <h2>Symptom2</h2>
+                </label>
+                <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom2">
+                <datalist id="symp">
+                    {% for symp in symptoms %}
+                    <option value="{{symp}}">{{symp}}</option>
+                    {% endfor %}
+                </datalist>
+
+                <label for="Symptom3" align="left">
+                    <h2>Symptom3</h2>
+                </label>
+                <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom3">
+                <datalist id="symp">
+                    {% for symp in symptoms %}
+                    <option value="{{symp}}">{{symp}}</option>
+                    {% endfor %}
+                </datalist>
+
+                <label for="Symptom4" align="left">
+                    <h2>Symptom4</h2>
+                </label>
+                <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom4">
+                <datalist id="symp">
+                    {% for symp in symptoms %}
+                    <option value="{{symp}}">{{symp}}</option>
+                    {% endfor %}
+                </datalist>
+
+                <label for="Symptom5" align="left">
+                    <h2>Symptom5</h2>
+                </label>
+                <input type="text" list="symp" multiple="multiple" class="form-control" name="Symptom5">
+                <datalist id="symp">
+                    {% for symp in symptoms %}
+                    <option value="{{symp}}">{{symp}}</option>
+                    {% endfor %}
+                </datalist>
+                <button type="submit" class="btn btn-primary" style="padding: 10px;"
+                    onclick="collect(this.form)">Check</button>
+            </form>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function collect(frm) {
+            var value = frm.Symptom.value + "\n" + frm.Symptom2.value + "\n" + frm.Symptom3.value + "\n" + frm.Symptom4.value + "\n" + frm.Symptom5.value;
+            localStorage.setItem('myValue', value);
+            window.location.href = 'disease_predict.html';
+        }
+    </script>
+    {% endblock %}
+</body>
+
+</html>
