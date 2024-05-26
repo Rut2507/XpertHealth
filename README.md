@@ -1,11 +1,11 @@
-# XpertHealth: 
+# XpertHealth
 ___
 
-## Intro
+## Intro :-
 
 A user-friendly website incorporating machine learning models for making predictions and addressing various physical health concerns.
 
-## Installation
+## Installation :-
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install XpertHealth.
 
@@ -15,7 +15,7 @@ pip install XpertHealth
 
 Use the **"pip install package_name"** to install additional required packages.
 
-## Layout
+## Layout :-
 
 Every page includes the navigation bar
 
@@ -55,7 +55,7 @@ Every page includes the navigation bar
 - Predict the chances of diabetes based on values provide under each features 
 
 
-## Working Demo
+## Working Demo :-
 
 https://github.com/Rut2507/XpertHealth/assets/161290431/223d7fe2-ee2e-4f58-b2d2-34e5d76d4c0a
 
